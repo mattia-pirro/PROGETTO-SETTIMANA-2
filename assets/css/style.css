@@ -31,6 +31,8 @@ button {
 
 /* Scrivi qui sotto i tuoi stili */
 
+/* HEADER */
+
 .site-header {
   background-color: #131921;
   position: sticky;
@@ -90,11 +92,24 @@ button {
   font-size: 14px;
 }
 
+.site-header div a:hover {
+  text-decoration: underline;
+}
+
 .carrello {
   background-color: #232F3E;
   padding: 8px 12px;
   border-radius: 4px;
 }
+
+/* MAIN */
+
+main {
+  background-color: #EEEEEE;
+  padding-bottom: 64px;
+}
+
+/* HERO */
 
 .hero {
   background-color: #303F51;
@@ -104,6 +119,8 @@ button {
   height: 200px;
   line-height: 2;
 }
+
+/* CATEGORIE */
 
 h2 {
   margin: 40px 20px 12px 20px;
@@ -117,13 +134,16 @@ h2 {
 
 .card {
   display: inline-block;
-  border: 1px solid #e6e0d386;
-  border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
   margin: 10px;
   padding: 0;
   width: 23%;
   background-color: white;
+}
+
+.card:hover {
+  transform: translateY(-2px);
 }
 
 .card img {
@@ -147,13 +167,19 @@ h2 {
   color: #1098b0;
 }
 
+.card div a:hover {
+  color: #FF9900;
+  text-decoration: underline;
+}
+
+/* PRODOTTI */
+
 .prodotti {
   width: 100%;
   text-align: center;
 }
 
 .products {
-  border: 1px solid #e6e0d386;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   display: inline-block;
   padding: 16px;
@@ -161,6 +187,7 @@ h2 {
   border-radius: 12px;
   width: 23%;
   text-align: left;
+  background-color: white;
 }
 
 .products h4 {
@@ -205,9 +232,11 @@ h2 {
   margin-top: 14px;
 }
 
-.acquisto:hover{
-  color: #F7CA00;
+.acquisto:hover {
+  background-color: #F7CA00;
 }
+
+/* FOOTER */
 
 .site-footer {
   background-color: #232F3E;
@@ -216,7 +245,6 @@ h2 {
   padding: 35px 20px;
   line-height: 2;
   font-size: 14px;
-  margin-top: 64px;
 }
 
 .contatti {
@@ -233,4 +261,8 @@ h2 {
 
 .contatti ul li {
   list-style: none;
+}
+
+.contatti ul li a:hover {
+  text-decoration: underline;
 }
