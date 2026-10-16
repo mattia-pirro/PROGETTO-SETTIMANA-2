@@ -46,6 +46,11 @@ button {
   margin: 0px 8px;
 }
 
+.fa-brands {
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
 .site-header form {
   display: inline;
   padding: 0;
@@ -72,7 +77,7 @@ button {
   border-radius: 0px 4px 4px 0px;
   font-weight: bold;
   vertical-align: middle;
-  margin-left: -4px;
+  margin-left: -5px;
   margin-right: 16px;
 }
 
@@ -101,7 +106,7 @@ button {
 }
 
 h2 {
-  margin: 40px 20px 12px 20px;  
+  margin: 40px 20px 12px 20px;
   text-align: left;
 }
 
@@ -148,18 +153,18 @@ h2 {
 }
 
 .products {
-  border: 1px solid #e6e0d386;  
+  border: 1px solid #e6e0d386;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   display: inline-block;
   padding: 16px;
   margin: 10px;
   border-radius: 12px;
-  width: 22%;
+  width: 23%;
   text-align: left;
 }
 
-.products h4{
-   font-size: 16px;
+.products h4 {
+  font-size: 15px;
 }
 
 .products img {
@@ -170,25 +175,25 @@ h2 {
 
 .rating p {
   display: inline-block;
-  margin-top: 4px;
+  margin-top: 20px;
 }
 
-.vote{
+.vote {
   color: #1098b0;
 }
 
-.stars{
+.stars {
   color: #FF9900;
 }
 
-.price{
+.price {
   font-size: 24px;
   font-weight: bold;
   color: #B4300F;
   margin-top: 1px;
 }
 
-.acquisto{
+.acquisto {
   width: 100%;
   text-align: center;
   background-color: #FFD814;
@@ -196,8 +201,12 @@ h2 {
   border-radius: 20px;
   font-weight: bold;
   color: black;
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 14px;
+}
+
+.acquisto:hover{
+  color: #F7CA00;
 }
 
 .site-footer {
