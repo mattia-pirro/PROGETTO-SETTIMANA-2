@@ -123,8 +123,12 @@ console.table(prodotti);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function formattaPrezzo(prezzo = 0) {
-   let stringa = String(prezzo.toFixed(2));
-   return stringa = '€ ' + stringa.replace('.', ',');
+   if (prezzo >= 0) {
+      let stringa = String(prezzo.toFixed(2));
+      return stringa = '€ ' + stringa.replace('.', ',');
+   } else {
+      return 'Numero inserito non valido';
+   }
 }
 console.log('Monitor: ' + formattaPrezzo(150.00));
 
@@ -141,15 +145,15 @@ function stelline(rating = 0) {
       for (let i = 0; i < rating; i++) {
          stelle += '★';
       }
-      for (let i2 = 0; i2 < 5 - rating; i2++) {
+      for (let i2 = 0; i2 < (5 - rating); i2++) {
          stelle += '☆';
       }
-      return `rating ${rating} → "${stelle}"`;
+      return `${stelle}`;
    } else {
       return 'Numero inserito non valido';
    }
 }
-console.log('Monitor: ' + stelline(3));
+console.log('Monitor: rating 3 → "' + stelline(3) + '"');
 
 /* VERSIONE INTERMEDIA — Filtro per categoria
    Funzione che riceve il parametro categoria e filtra l'array prodotti mostrando solo i prodotti della categoria ricevuta
@@ -191,6 +195,29 @@ console.table(filtroProdotti());
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function griglia(array = []) {
+   let container = document.getElementById("griglia");
+   let product = "";
+   for (let i = 0; i < array.length; i++) {
+      let costo = formattaPrezzo(array[i].prezzo);
+      let stelle = stelline(array[i].rating);
+      product = product +
+         `<article class="products">
+         <img src="https://placehold.co/350x320/EEEEEE/333333?text=${array[i].nome}" alt="${array[i].nome}"">
+         <h4>${array[i].nome}</h4>
+         <div class="rating">
+            <p class="stars">${stelle}</p>
+            <p class="vote"> (${array[i].rating})</p>
+         </div>
+         <div class="price-container">
+            <p class="price">${costo}</p>
+         </div>     
+         <button type="button" onclick="contCarrello(this)" name="${array[i].nome}" class="acquisto">Aggiungi al carrello</button>
+      </article>`;
+   }
+   container.innerHTML = product;
+}
+griglia(prodotti);
 
 
 /* VERSIONE AVANZATA — Aggiungi al carrello
@@ -201,8 +228,22 @@ console.table(filtroProdotti());
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
-
+let c = 0;
+function contCarrello(bottone) {
+   const contAcquisti = document.querySelector(".cont");
+   for (let i = 0; i < prodotti.length; i++) {
+      if (bottone.name === prodotti[i].nome) {
+         if (prodotti[i].disponibile === 'true') {
+            c++;
+            contAcquisti.innerText = `${c}`;
+         } else {
+            bottone.disabled = true;
+            bottone.innerText = "Esaurito";
+         }
+         break;
+      }
+   }
+}
 /* VERSIONE AVANZATA — Ordinamento
    Menu a tendina con: Prezzo crescente, Prezzo decrescente, Rating.
    Suggerimento: per rendere più leggibile la select puoi usare optgroup
