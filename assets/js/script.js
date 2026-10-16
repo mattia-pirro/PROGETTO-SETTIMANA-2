@@ -15,7 +15,106 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const prodotti = [
+   {
+      nome: 'Monitor',
+      categoria: 'Periferiche',
+      prezzo: 99.99,
+      rating: 5,
+      immagine: 'Monitor.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Stampante',
+      categoria: 'Periferiche',
+      prezzo: 299.99,
+      rating: 4,
+      immagine: 'Stampante.png',
+      disponibile: 'false',
+   },
+   {
+      nome: 'Mouse',
+      categoria: 'Periferiche',
+      prezzo: 19.99,
+      rating: 2,
+      immagine: 'Mouse.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Tastiera',
+      categoria: 'Periferiche',
+      prezzo: 49.99,
+      rating: 3,
+      immagine: 'Tastiera.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'RAM',
+      categoria: 'Hardware',
+      prezzo: 79.99,
+      rating: 5,
+      immagine: 'RAM.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Scheda video',
+      categoria: 'Hardware',
+      prezzo: 149.99,
+      rating: 4,
+      immagine: 'Scheda-video.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Ventole',
+      categoria: 'Hardware',
+      prezzo: 59.99,
+      rating: 2,
+      immagine: 'Ventole.png',
+      disponibile: 'false',
+   },
+   {
+      nome: 'Tablet',
+      categoria: 'Dispositivi',
+      prezzo: 599.99,
+      rating: 4,
+      immagine: 'Tablet.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Cellulare',
+      categoria: 'Dispositivi',
+      prezzo: 899.99,
+      rating: 4,
+      immagine: 'Cellulare.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Smartwatch',
+      categoria: 'Dispositivi',
+      prezzo: 119.99,
+      rating: 2,
+      immagine: 'Smartwatch.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Playstaition',
+      categoria: 'Console',
+      prezzo: 379.99,
+      rating: 5,
+      immagine: 'Playstaition.png',
+      disponibile: 'true',
+   },
+   {
+      nome: 'Xbox',
+      categoria: 'Console',
+      prezzo: 224.99,
+      rating: 3,
+      immagine: 'Xbox.png',
+      disponibile: 'true',
+   },
+]
 
+console.table(prodotti);
 
 /* VERSIONE INTERMEDIA — formattaPrezzo(prezzo)
    Funzione che ritorna una stringa tipo "€ 19,99".
@@ -23,7 +122,11 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+function formattaPrezzo(prezzo = 0) {
+   let stringa = String(prezzo.toFixed(2));
+   return stringa = '€ ' + stringa.replace('.', ',');
+}
+console.log('Monitor: ' + formattaPrezzo(150.00));
 
 /* VERSIONE INTERMEDIA — stelline(rating)
    Funzione che ritorna una stringa di stelline piene/vuote.
@@ -32,18 +135,53 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function stelline(rating = 0) {
+   let stelle = '';
+   if (rating > 0 && rating <= 5) {
+      for (let i = 0; i < rating; i++) {
+         stelle += '★';
+      }
+      for (let i2 = 0; i2 < 5 - rating; i2++) {
+         stelle += '☆';
+      }
+      return `rating ${rating} → "${stelle}"`;
+   } else {
+      return 'Numero inserito non valido';
+   }
+}
+console.log('Monitor: ' + stelline(3));
 
 /* VERSIONE INTERMEDIA — Filtro per categoria
    Funzione che riceve il parametro categoria e filtra l'array prodotti mostrando solo i prodotti della categoria ricevuta
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function scegliCategoria(nomeCategoria) {
+   let listaCategoria = [];
+   for (let i = 0; i < prodotti.length; i++) {
+      if (nomeCategoria === prodotti[i].categoria) {
+         listaCategoria.push(prodotti[i]);
+      }
+   }
+   return listaCategoria;
+}
+console.table(scegliCategoria('Dispositivi'));
 
 /* VERSIONE INTERMEDIA — Filtro disponibilità e rating
    Funzione che genera un array filtrato dall'array prodotti, mostrando soltanto i prodotti disponibili con rating >= 3
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function filtroProdotti() {
+   let listaFiltrata = [];
+   for (let i = 0; i < prodotti.length; i++) {
+      if (prodotti[i].disponibile === 'true' && prodotti[i].rating >= 3) {
+         listaFiltrata.push(prodotti[i]);
+      }
+   }
+   return listaFiltrata;
+}
+console.table(filtroProdotti());
 
 /* --------------------------------------------------------------
 

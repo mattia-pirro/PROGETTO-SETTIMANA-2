@@ -107,6 +107,7 @@ button {
 main {
   background-color: #EEEEEE;
   padding-bottom: 64px;
+  width: 100%;
 }
 
 /* HERO */
@@ -118,6 +119,7 @@ main {
   padding: 45px 0px;
   height: 200px;
   line-height: 2;
+  width: 100%;
 }
 
 /* CATEGORIE */
@@ -188,6 +190,7 @@ h2 {
   width: 23%;
   text-align: left;
   background-color: white;
+  vertical-align: middle;
 }
 
 .products h4 {
