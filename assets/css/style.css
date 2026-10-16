@@ -1,0 +1,227 @@
+/* CSS reset minimo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Scrivi qui sotto i tuoi stili */
+
+.site-header {
+  background-color: #131921;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  color: white;
+}
+
+.logo {
+  color: #FF9900;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0px 8px;
+}
+
+.site-header form {
+  display: inline;
+  padding: 0;
+}
+
+.cerca input {
+  background-color: white;
+  color: rgb(68, 68, 68);
+  padding: 9px;
+  width: 40%;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px 0px 0px 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.cerca button {
+  background-color: #FEBD69;
+  color: black;
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 0px 4px 4px 0px;
+  font-weight: bold;
+  vertical-align: middle;
+  margin-left: -4px;
+  margin-right: 16px;
+}
+
+.site-header div {
+  display: inline;
+}
+
+.site-header div a {
+  margin-right: 12px;
+  font-size: 14px;
+}
+
+.carrello {
+  background-color: #232F3E;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.hero {
+  background-color: #303F51;
+  color: white;
+  text-align: center;
+  padding: 45px 0px;
+  height: 200px;
+  line-height: 2;
+}
+
+h2 {
+  margin: 40px 20px 12px 20px;  
+  text-align: left;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  display: inline-block;
+  border: 1px solid #e6e0d386;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin: 10px;
+  padding: 0;
+  width: 23%;
+  background-color: white;
+}
+
+.card img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card div {
+  text-align: left;
+  padding: 16px 12px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.card div h3 {
+  margin-bottom: 3px;
+}
+
+.card div a {
+  font-size: 14px;
+  color: #1098b0;
+}
+
+.prodotti {
+  width: 100%;
+  text-align: center;
+}
+
+.products {
+  border: 1px solid #e6e0d386;  
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  display: inline-block;
+  padding: 16px;
+  margin: 10px;
+  border-radius: 12px;
+  width: 22%;
+  text-align: left;
+}
+
+.products h4{
+   font-size: 16px;
+}
+
+.products img {
+  text-align: center;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.rating p {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.vote{
+  color: #1098b0;
+}
+
+.stars{
+  color: #FF9900;
+}
+
+.price{
+  font-size: 24px;
+  font-weight: bold;
+  color: #B4300F;
+  margin-top: 1px;
+}
+
+.acquisto{
+  width: 100%;
+  text-align: center;
+  background-color: #FFD814;
+  padding: 12px 0px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: black;
+  font-size: 14px;
+  margin-top: 14px;
+}
+
+.site-footer {
+  background-color: #232F3E;
+  color: white;
+  height: 26vh;
+  padding: 35px 20px;
+  line-height: 2;
+  font-size: 14px;
+  margin-top: 64px;
+}
+
+.contatti {
+  width: 33%;
+}
+
+.contatti ul {
+  margin-top: 6px;
+}
+
+.box div {
+  display: inline-block;
+}
+
+.contatti ul li {
+  list-style: none;
+}
